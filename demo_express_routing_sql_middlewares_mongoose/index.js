@@ -16,7 +16,7 @@ app.use(express.json()); // Middleware para parsear el body de las peticiones
 // Rutas
 const booksRoutes = require("./routes/books.routes")
 const productsRoutes = require("./routes/products.routes")
-const entriesRoutes = require("./routes/entries.routes")
+//const entriesRoutes = require("./routes/entries.routes")
 
 // GET http://localhost:3000/ --> Ruta /. La principal
 app.get("/", (req, res) => {
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 //API
 app.use('/api/books',checkApiKey, booksRoutes); // bloquear todas las rutas con API KEY
 app.use('/api/products',productsRoutes);
-app.use('/api/entries',entriesRoutes);
+// app.use('/api/entries',entriesRoutes);
 
 // GET http://localhost:3000/perros/toby
 // GET http://localhost:3000/perros/mordisquitos

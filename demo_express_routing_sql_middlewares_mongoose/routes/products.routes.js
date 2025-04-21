@@ -1,6 +1,8 @@
 const productsController = require('../controllers/products.controller');
 const router = require('express').Router();
-
+// GET http://localhost:3000/api/products/2
+// GET http://localhost:3000/api/products/3
+// GET http://localhost:3000/api/products
 router.get("/:id?", productsController.getProduct);
 /*
 POST http://localhost:3000/api/products

@@ -15,13 +15,16 @@ const createProduct = async (req, res) => {
 };
 
 // READ
+// http://localhost:3000/api/products/2
+// http://localhost:3000/api/products/3
+// http://localhost:3000/api/products
 const getProduct = async (req, res) => {
   try {
     const id = req.params.id;
     let products = id
       ? await Product.find({ id }, "-_id -__v").populate("provider", '-_id -__v')
       : await Product.find({}, "-_id -__v").populate("provider", '-_id -__v'); //{}
-    res.status(200).json(products); // Respuesta de la API para 1 producto
+    res.status(200).json(products); // Respuesta de la API
   } catch (error) {
     console.log(`ERROR: ${error.stack}`);
     res.status(400).json({ msj: `ERROR: ${error.stack}` });
@@ -34,7 +37,16 @@ const editProduct = (req, res) => {
 };
 
 // DELETE
-const deleteProduct = (req, res) => {
+// DELETE http://localhost:3000/api/products/3
+const deleteProduct = async (req, res) => {
+
+  const id = req.params.id;
+  const result = await Product.deleteOne({ id });
+  console.log(result.deletedCount);
+  if (result.deletedCount === 0) {
+    res.status(404).send("Producto no encontrado");
+    return;
+  }
   res.status(200).send("Producto borrado!. Has borrado:" + req.params.id);
 };
 
