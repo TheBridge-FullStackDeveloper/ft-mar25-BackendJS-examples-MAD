@@ -16,7 +16,8 @@ app.use(express.json()); // Middleware para parsear el body de las peticiones
 // Rutas
 const booksRoutes = require("./routes/books.routes")
 const productsRoutes = require("./routes/products.routes")
-const entriesRoutes = require("./routes/entries.routes")
+const providersRoutes = require("./routes/providers.routes")
+//const entriesRoutes = require("./routes/entries.routes")
 
 // GET http://localhost:3000/ --> Ruta /. La principal
 app.get("/", (req, res) => {
@@ -24,11 +25,33 @@ app.get("/", (req, res) => {
   res.send("Hello World!. Welcome to Backend");
 });
 
+/**
+ * IMPLEMENTACIÓN DE ENDPOINTS REQUERIDOS
+ * 
+ * Se han implementado los siguientes endpoints:
+ * 
+ * 1. CRUD Provider:
+ *    - [GET] /api/providers: Retorna todos los providers (status 200)
+ *    - [POST] /api/providers: Crea un nuevo provider (status 201)
+ *    - [PUT] /api/providers: Actualiza un provider existente (status 200)
+ *    - [DELETE] /api/providers: Elimina un provider si no tiene productos asociados (status 200)
+ * 
+ * 2. CRUD Products:
+ *    - [GET] /api/products: Retorna todos los productos con sus providers (status 200)
+ *    - [POST] /api/products: Crea un nuevo producto asociado a un provider (status 201)
+ *    - [PUT] /api/products: Actualiza un producto existente (status 200)
+ *    - [DELETE] /api/products: Elimina un producto por su título (status 200)
+ * 
+ * NOTA: Para el DELETE de providers, se verifica si el provider tiene productos relacionados.
+ * Si tiene productos asociados, se impide la eliminación para mantener la integridad referencial.
+ */
+
 // Rutas a habilitar
 //API
 app.use('/api/books',checkApiKey, booksRoutes); // bloquear todas las rutas con API KEY
 app.use('/api/products',productsRoutes);
-app.use('/api/entries',entriesRoutes);
+app.use('/api/providers',providersRoutes);
+//app.use('/api/entries',entriesRoutes);
 
 // GET http://localhost:3000/perros/toby
 // GET http://localhost:3000/perros/mordisquitos

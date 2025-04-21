@@ -44,7 +44,7 @@ const Provider = mongoose.model('Provider', providerSchema);
 
 module.exports = Provider;
 
-/* 
+ /*
 // Insertar un proveedor
 const p = new Provider({
     companyName: "La casa de las flores",
@@ -67,4 +67,4 @@ const p2 = new Provider({
 // Guardar en la BBDD
 p2.save()
 .then((data)=>console.log(data))
- */
+*/ 
