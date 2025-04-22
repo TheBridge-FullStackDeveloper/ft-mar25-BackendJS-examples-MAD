@@ -21,7 +21,7 @@ app.set('views','./views');
 //API
 const booksRoutes = require("./routes/books.routes")
 const productsRoutes = require("./routes/products.routes")
-const entriesRoutes = require("./routes/entries.routes")
+//const entriesRoutes = require("./routes/entries.routes")
 //WEB
 const productsWebRoutes = require("./routes/products.web.routes")
 
@@ -36,10 +36,14 @@ app.get("/", (req, res) => {
 //API
 app.use('/api/books',checkApiKey, booksRoutes); // bloquear todas las rutas con API KEY
 app.use('/api/products',productsRoutes);
-app.use('/api/entries',entriesRoutes);
+//app.use('/api/entries',entriesRoutes);
 
 //WEB
 app.use('/products', productsWebRoutes);
+
+app.get("/about", (req, res) => {
+  res.render("about.pug");
+})
 
 // GET http://localhost:3000/perros/toby
 // GET http://localhost:3000/perros/mordisquitos
