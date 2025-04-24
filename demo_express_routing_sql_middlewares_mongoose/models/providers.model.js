@@ -44,27 +44,29 @@ const Provider = mongoose.model('Provider', providerSchema);
 
 module.exports = Provider;
 
-/* 
-// Insertar un proveedor
-const p = new Provider({
-    companyName: "La casa de las flores",
-    website: "https://www.lacasadelasflores.com",
-    image:"https://www.lacasadelasflores.com/imagen.jpg"
-});
 
-// Guardar en la BBDD
-p.save()
-.then((data)=>console.log(data))
-.catch(err=>console.log(err))
 
-// Insertar otro proveedor
-const p2 = new Provider({
-    companyName: "La casa de las plantas",
-    website: "https://www.lacasadelasplantas.com",
-    image:"https://www.lacasadelasplantas.com/imagen.jpg"
-});
 
-// Guardar en la BBDD
-p2.save()
-.then((data)=>console.log(data))
- */
+// // Insertar un proveedor
+// const p = new Provider({
+//     companyName: "La casa de las flores",
+//     website: "https://www.lacasadelasflores.com",
+//     image:"https://www.lacasadelasflores.com/imagen.jpg"
+// });
+
+// // Guardar en la BBDD
+// p.save()
+// .then((data)=>console.log(data))
+// .catch(err=>console.log(err))
+
+// // Insertar otro proveedor
+// const p2 = new Provider({
+//     companyName: "La casa de las plantas",
+//     website: "https://www.lacasadelasplantas.com",
+//     image:"https://www.lacasadelasplantas.com/imagen.jpg"
+// });
+
+// // Guardar en la BBDD
+// p2.save()
+// .then((data)=>console.log(data))
+ 

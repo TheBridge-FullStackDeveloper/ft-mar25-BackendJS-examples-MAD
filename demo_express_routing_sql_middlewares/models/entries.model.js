@@ -3,10 +3,10 @@ const queries = require('./queries') // Queries SQL
 
 const pool = new Pool({
     host: 'localhost',
-    user: 'alex',
+    user: 'postgres',
     port: '5432',
     database: 'postgres',
-    password: '1234'
+    password: '123456'
   });
 
 // GET
@@ -108,16 +108,16 @@ module.exports = entries;
 
 // Pruebas
 
-/*     getEntriesByEmail("birja@thebridgeschool.es")
-    .then(data=>console.log(data)) */
+    //  getEntriesByEmail("birja@thebridgeschool.es")
+    // .then(data=>console.log(data)) 
 
 
-/*
-getAllEntries()
-.then(data=>console.log(data))
-*/
 
-/*
+// getAllEntries()
+// .then(data=>console.log(data))
+
+
+
  let newEntry = {
     title: "Se acabaron las tortillas del Markina",
     content: "Estaban demasiado muy buenas y se las han comido todas",
@@ -127,19 +127,19 @@ getAllEntries()
 
 createEntry(newEntry)
     .then(data => console.log(data))
-    */
 
-/*
+
+
 const updatedEntry = {
     title: "Estamos de Lunes de Back 2",
     content: "La venganza de Elefante relacional SQL",
     date:"2024-06-17",
     email: "guillermu@thebridgeschool.es",
     category: "Software",
-    old_title:"Estamos de Lunes de Back"
+    old_title:"Estamos de Jueves de Back"
 }
 
 updateEntry(updatedEntry)
     .then(data => console.log(data))
 
-    */
+    

@@ -89,7 +89,7 @@ createProduct(
   "Cafe jugosa del teatro",
   "https://www.recetasderechupete.com/wp-content/uploads/2020/11/Tortilla-de-patatas-4-1200x828.jpg",
   "La casa de las plantas"
-); */
+); 
 
 // Insertar un producto
 /*
