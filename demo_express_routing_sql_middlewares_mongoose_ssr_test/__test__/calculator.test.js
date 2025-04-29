@@ -52,6 +52,9 @@ describe("Testing calculator functionalities", () => {
     test("Subtracting without parameters return NaN", () => {
       expect(sub()).toBe(NaN);
     });
+    test("Subtracting  NaN - NaN return NaN", () => {
+      expect(sub(NaN,NaN)).toBe(NaN);
+    });
   });
 
   describe("Dividing numbers. Testing div() function", () => {
@@ -101,6 +104,10 @@ describe("Testing calculator functionalities", () => {
 
     test("Dividing 1/NaN equals NaN", () => {
       expect(div(1, NaN)).toBe(NaN);
+    });
+
+    test("Dividing {}/[] equals NaN", () => {
+      expect(div({}, [])).toBe(NaN);
     });
   });
 });
