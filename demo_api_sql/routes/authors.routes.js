@@ -11,12 +11,9 @@ const handleValidationErrors = require('../middlewares/handleValidation'); // Va
 
 const router = express.Router();
 
-// Aplicar handleValidationErrors globalmente
-router.use(handleValidationErrors);
-
-router.get('/:email?', validateGetAuthors, authorsController.getAuthors);
-router.post('/', validateCreateAuthor, authorsController.createAuthor);
-router.put('/', validateUpdateAuthor, authorsController.updateAuthor);
-router.delete('/', validateDeleteAuthor, authorsController.deleteAuthor);
+router.get('/:email?', validateGetAuthors, handleValidationErrors, authorsController.getAuthors);
+router.post('/', validateCreateAuthor, handleValidationErrors, authorsController.createAuthor);
+router.put('/', validateUpdateAuthor, handleValidationErrors, authorsController.updateAuthor);
+router.delete('/', validateDeleteAuthor, handleValidationErrors, authorsController.deleteAuthor);
 
 module.exports = router;
